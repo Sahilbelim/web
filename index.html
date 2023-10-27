@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    .img {
+        /* margin-left:30% ; */
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        /* margin-bottom: -50px; */
+        /* padding-top: -50px; */
+    }
+</style>
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Montserrat", sans-serif;
+        /* background-color: #fff; */
+        background: rgb(195, 89, 34);
+        background: linear-gradient(0deg, rgba(195, 89, 34, 1) 0%, rgba(225, 253, 45, 1) 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        min-height: 100vh;
+        margin: 0;
+        transition: background 0.2s linear;
+    }
+
+    body.dark {
+        /* background: rgb(2, 0, 36);
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 121, 74, 1) 35%, rgba(0, 212, 255, 1) 100%); */
+         background: rgb(41,70,109);
+background: linear-gradient(0deg, rgba(41,70,109,1) 0%, rgba(75,164,158,1) 100%); 
+
+    }
+
+    button.dark {}
+
+    body.dark h1,
+    body.dark .support a {
+        color: #fff;
+    }
+
+    .checkbox {
+        opacity: 0;
+        position: absolute;
+    }
+
+    .checkbox-label {
+        background-color: #111;
+        width: 50px;
+        height: 26px;
+        border-radius: 50px;
+        position: relative;
+        padding: 5px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .fa-moon {
+        color: #f1c40f;
+    }
+
+    .fa-sun {
+        color: #f39c12;
+    }
+
+    .checkbox-label .ball {
+        background-color: #fff;
+        width: 22px;
+        height: 22px;
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        border-radius: 50%;
+        transition: transform 0.2s linear;
+    }
+
+    .checkbox:checked+.checkbox-label .ball {
+        transform: translateX(24px);
+    }
+
+    /*  Support me if you like it */
+    .support {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .support a {
+        color: #292c35;
+        font-size: 32px;
+        backface-visibility: hidden;
+        display: inline-block;
+        transition: transform 0.2s ease;
+    }
+
+    .support a:hover {
+        transform: scale(1.1);
+    }
+
+    .card {
+        /* opacity: 0.5; */
+
+    }
+</style>
+
+<body>
+
+    <div>
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="checkbox-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+        </label>
+    </div>
+    <div class="container mt-5">
+        <div class="row mt-5">
+            <div class="col-4 offset-4">
+                <div class="card border border-white shadow ">
+                    <div class="card-body">
+                        <img src="https://picsum.photos/200" alt="" class=" img">
+                        <div class="input-group mt-3">
+                            <span class="input-group-text" id="input-group-left-example"><i
+                                    class="fa-solid fa-user"></i></span>
+                            <input type="email" class="form-control" placeholder="email" aria-label="email"
+                                aria-describedby="input-group-left">
+                        </div>
+                        <div class="input-group my-3">
+                            <span class="input-group-text" id="input-group-left-example"><i
+                                    class="fa-solid fa-lock"></i></span>
+                            <input type="password" class="form-control" placeholder="password" aria-label="password"
+                                aria-describedby="input-group-left">
+                        </div>
+
+                        <div class="form-check my-3">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label " for="flexCheckChecked">
+                                Remamber me
+                            </label>
+
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary text-center" type="button">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        const checkbox = document.getElementById("checkbox")
+        checkbox.addEventListener("change", () => {
+            document.body.classList.toggle("dark")
+        })
+        //  const card = document.getElementById("card")
+        //     checkbox.addEventListener("change", () => {
+        //         document.body.classList.toggle("dark")
+        //     })
+
+    </script>
+</body>
+
+</html>
